@@ -1,0 +1,5 @@
+{
+  "sensorId": "b086c1b3-d175-4ce1-a4b4-86bf00e4c078",
+  "model": "UpperBoundThresholdAnomalyDetector",
+  "threshold": "35.0"
+}

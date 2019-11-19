@@ -6,6 +6,7 @@ import com.anomaly.exception.AnomalyDetectionValidationException;
 import com.anomaly.request.EventRequest;
 import com.anomaly.response.EventResponse;
 import com.google.gson.Gson;
+import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -35,10 +36,12 @@ public class AnomalyDetectionHandler implements HttpHandler {
             String line = "";
             while ((line = br.readLine()) != null)
                 request += line;
-            System.out.println(request);
+            //System.out.println(request);
             EventRequest eventRequest = gson.fromJson(request, EventRequest.class);
             EventResponse eventResponse = anomalyDetectionService.processEvent(eventRequest);
             response = gson.toJson(eventResponse);
+            Headers headers = httpExchange.getResponseHeaders();
+            headers.set("Content-Type", "application/json");
             httpExchange.sendResponseHeaders(200, response.length());
         } catch (AnomalyDetectionValidationException exception) {
             response = "A Validation Error has occurred in validating the request.";

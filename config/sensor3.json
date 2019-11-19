@@ -1,0 +1,5 @@
+{
+  "sensorId": "9b779fec-79f9-4fd8-8b12-f17d8b233b46",
+  "model": "AverageThresholdAnomalyDetector",
+  "threshold": "35.0"
+}

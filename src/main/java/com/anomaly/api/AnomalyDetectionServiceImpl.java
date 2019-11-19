@@ -25,10 +25,10 @@ public class AnomalyDetectionServiceImpl implements AnomalyDetectionService {
     public EventResponse processEvent(final EventRequest eventRequest) {
         try {
             validateRequest(eventRequest);
-            System.out.println("Event Request " + eventRequest);
+            //System.out.println("Event Request " + eventRequest);
             Event event = anomalyDetectionLogic.processEvent(prepareEventFromEventRequest(eventRequest), detectorModelMap );
             EventResponse eventResponse = prepareEventResponse(event);
-            System.out.println("Event Response " + eventResponse);
+            //System.out.println("Event Response " + eventResponse);
             return eventResponse;
         } catch (AnomalyDetectionValidationException exception){
             throw exception;

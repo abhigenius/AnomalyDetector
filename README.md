@@ -22,7 +22,8 @@ If the message "Server started successfully." is displayed, the server is succes
 
 POST : http://localhost:8000/api/event
 
-##Sample Payload 1
+##Sample Payload 1 :
+
           {
               "eventId" : "cj86g5ypk000004zvevipqxfn12",
               "sensorId" : "fd0a635d-2aaf-4460-a817-6353e1b6c050",
